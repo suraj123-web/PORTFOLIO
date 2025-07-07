@@ -1,0 +1,120 @@
+/* 🌐 Import Google Font — must come first! */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌍 Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300 ease-in-out;
+}
+
+h1, h2, h3 {
+  @apply font-bold tracking-wide;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-extrabold text-center mb-10 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply block w-16 h-1 bg-blue-500 mx-auto mt-2 rounded-full;
+}
+
+/* 🔘 Buttons */
+.btn-primary {
+  @apply inline-block px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:scale-105 transform transition-all duration-300 shadow-md;
+}
+
+.btn-outline {
+  @apply inline-block px-6 py-3 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white hover:scale-105 transform transition-all duration-300 shadow-md;
+}
+
+/* 📦 Cards */
+.card {
+  @apply p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+}
+
+/* 🧱 Section Spacing */
+.section {
+  @apply p-6 sm:p-12;
+}
+
+/* 👤 About Section */
+.about-text {
+  @apply max-w-3xl mx-auto text-center text-lg leading-relaxed animate-fadeIn;
+}
+
+/* 🕓 Timeline */
+.timeline {
+  @apply space-y-6;
+}
+
+.timeline-item {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition duration-300;
+}
+
+.timeline-title {
+  @apply text-xl font-semibold mb-1;
+}
+
+.timeline-date {
+  @apply text-sm text-gray-500 dark:text-gray-400 mb-2 italic;
+}
+
+.timeline-desc {
+  @apply text-base;
+}
+
+/* 📜 Certificates */
+.cert-list {
+  @apply list-disc list-inside text-left max-w-xl mx-auto;
+}
+
+/* 📬 Contact */
+.contact-info {
+  @apply text-center space-y-2;
+}
+
+.contact-info a {
+  @apply text-blue-600 hover:underline hover:text-blue-800 transition-colors duration-200;
+}
+
+/* 🌙 Dark Mode Toggle */
+.dark-mode-toggle {
+  @apply absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300;
+}
+
+/* 🌚 Dark Styling */
+.dark {
+  @apply bg-gray-900 text-white transition-colors duration-300;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark .section-title {
+  @apply text-white;
+}
+
+/* ✨ Animation Utilities */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out both;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
